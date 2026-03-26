@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procesos - Briket S.A.</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        /* Header + NAVBAR */
+        header {
+            background-color: #000;
+            color: white;
+            padding: 15px 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        header img {
+            height: 45px;
+            filter: brightness(0) invert(1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 25px;
+            font-weight: 400;
+        }
+
+        /* NAV MENU */
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav a {
+            color: #f9fafb;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 6px 10px;
+            border-radius: 4px;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        nav a:hover {
+            background-color: #f9fafb;
+            color: #000;
+        }
+
+        /* Contenedor principal */
+        .container {
+            padding: 25px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            margin-bottom: 25px;
+        }
+
+        .card h2 {
+            margin-top: 0;
+            color: #000;
+        }
+
+        /* Lista de procesos */
+        .process-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .process-list li {
+            background: #eee;
+            padding: 12px 15px;
+            margin-bottom: 8px;
+            border-radius: 5px;
+            transition: 0.2s;
+        }
+
+        .process-list li:hover {
+            background: #dcdcdc;
+        }
+
+        .process-list a {
+            text-decoration: none;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .diagram {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .diagram img {
+            max-width: 100%;
+            border: 0px solid #ccc;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ENCABEZADO + NAVBAR -->
+    <header>
+        <div class="header-left">
+            <img src="logo_briket.png" alt="Briket S.A.">
+            <h1>Ingeniería de Procesos</h1>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="Procesos.html">Inicio</a></li>
+                <!-- ver si hace falta agregar otra pagina -->
+                <li><a href="Novedades.html">Novedades</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <!-- DIAGRAMA DE PROCESOS -->
+        <div class="card">
+            <h2>Diagrama de Flujo de Procesos</h2>
+            <div class="diagram">
+                <img src="Diagrama Procesos.png" alt="Diagrama de Procesos">
+            </div>
+        </div>
+
+        <!-- LISTA DE PROCESOS -->
+        <div class="card">
+            <h2>Hojas de Proceso – Línea Horizontales</h2>
+
+            <style>
+                .accordion {
+                    background-color: #eee;
+                    color: #000;
+                    cursor: pointer;
+                    padding: 15px;
+                    width: 100%;
+                    border: none;
+                    text-align: left;
+                    outline: none;
+                    font-size: 16px;
+                    border-radius: 5px;
+                    margin-bottom: 8px;
+                    transition: 0.3s;
+                }
+
+                .accordion:hover {
+                    background-color: #ddd;
+                }
+
+                .panel {
+                    padding: 0 15px;
+                    background-color: white;
+                    display: none;
+                    overflow: hidden;
+                    border-left: 3px solid #000;
+                    border-radius: 5px;
+                    margin-bottom: 10px;
+                }
+
+                .panel a {
+                    display: block;
+                    padding: 8px 0;
+                    text-decoration: none;
+                    color: #000;
+                }
+
+                .panel a:hover {
+                    text-decoration: underline;
+                }
+            </style>
+
+            <!-- 1. ARH -->
+            <button class="accordion">1. ARH – Armado de Horizontales</button>
+            <div class="panel">
+                <!-- LISTADO INTERNO ARH -->
+                <!-- Acá me pasás las hojas y te las agrego -->
+            </div>
+
+            <!-- 2. ESPH -->
+            <button class="accordion">2. ESPH – Espumado Horizontales</button>
+            <div class="panel">
+                <!-- LISTADO INTERNO ESPH -->
+            </div>
+
+            <!-- 3. PEH -->
+            <button class="accordion">3. PEH – Post-Espumado Horizontales</button>
+            <div class="panel">
+                <!-- LISTADO INTERNO PEH -->
+            </div>
+
+            <!-- 4. EQUH -->
+            <button class="accordion">4. EQUH – Equipado de Horizontales</button>
+            <div class="panel">
+                <!-- LISTADO INTERNO EQUH -->
+            </div>
+
+            <!-- 5. TERH -->
+            <button class="accordion">5. TERH – Terminación Horizontales</button>
+            <div class="panel">
+                <!-- LISTADO INTERNO TERH -->
+            </div>
+
+            <!-- 6. CONH -->
+            <button class="accordion">6. CONH – Control Horizontales</button>
+            <div class="panel">
+                <!-- LISTADO INTERNO CONH -->
+            </div>
+
+            <!-- 7. EMBH -->
+            <button class="accordion">7. EMBH – Embalaje Horizontales</button>
+            <div class="panel">
+                <!-- LISTADO INTERNO EMBH -->
+            </div>
+
+            <!-- 8. PUEH -->
+            <button class="accordion">8. PUEH – Puertas Horizontales</button>
+            <div class="panel">
+                <!-- LISTADO INTERNO PUEH -->
+            </div>
+
+            <!-- 9. SUBH -->
+            <button class="accordion">9. SUBH – Subensamble Horizontales</button>
+            <div class="panel">
+                <!-- LISTADO INTERNO SUBH -->
+            </div>
+        </div>
+
+        <script>
+            var acc = document.getElementsByClassName("accordion");
+            for (let i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function () {
+                    this.classList.toggle("active");
+                    var panel = this.nextElementSibling;
+                    panel.style.display = panel.style.display === "block" ? "none" : "block";
+                });
+            }
+        </script>
+
+        <!-- SECCIÓN DE PEDIDOS DEL SUPERVISOR -->
+        <div class="card">
+            <h2>Solicitudes de Procesos</h2>
+            <p>
+                Si necesitás solicitar una mejora, corrección o acción al área de Procesos, 
+                podés cargar tu pedido en el siguiente formulario. 
+                El estado de cada pedido se actualizará automáticamente en Notion.
+            </p>
+
+            <a href="https://www.notion.so/2b9ed757359b80d6ad48ce41a4ffcb18?v=2b9ed757359b80128318000ccdfa5106&source=copy_link"
+               target="_blank"
+               style="
+                    display: inline-block;
+                    padding: 12px 20px;
+                    background-color: #000;
+                    color: #fff;
+                    border-radius: 8px;
+                    text-decoration: none;
+                    font-weight: bold;
+                    margin-top: 10px;
+               ">
+                ➕ Crear nueva tarea / pedido
+            </a>
+
+            <p style="margin-top: 15px; color: #555;">
+                Al hacer clic se abrirá el formulario de Notion para cargar una nueva tarea. 
+    
+            </p>
+        </div>
+
+    </div>
+
+</body>
+</html>

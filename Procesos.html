@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procesos - Briket S.A.</title>
+
+    <!-- CSS externo -->
+    <link rel="stylesheet" href="Comun.css">
+    <link rel="stylesheet" href="Procesos.css">
+</head>
+
+<body>
+
+    <!-- ENCABEZADO + NAVBAR -->
+    <header>
+        <div class="header-left">
+            <img src="logo_briket.png" alt="Briket S.A.">
+            <h1>Ingeniería de Procesos</h1>
+        </div>
+
+        <button class="menu-toggle" id="menu-toggle">
+            <span></span>
+        </button>
+
+        <nav>
+            <ul>
+                <li><a href="Procesos.html">Inicio</a></li>
+                <li><a href="Horizontales.html">Línea Horizontales</a></li>
+                <li><a href="Verticales.html">Línea Verticales</a></li>
+                <li><a href="ref">Plástico</a></li>
+                <li><a href="ref">Chapería</a></li>
+                <li><a href="Novedades.html">Novedades / Solicitudes</a></li>
+                <li><a href="Calendario.html">Calendario</a></li>
+                <!-- <li><a href="ProduccionHoraHora.html">Producción Hora a Hora</a></li> -->
+            </ul>
+        </nav>
+    </header> 
+
+    <main>
+
+        <div class="page-layout">
+        <div class="main-content">
+
+        <div class="container">
+
+            <!-- Introducción general -->
+            <div class="card">
+                <h2 class="page-title">Panel general de Procesos</h2>
+                <p class="page-subtitle">
+                    Desde este inicio podés acceder a las distintas áreas de la planta, consultar el diagrama
+                    de flujo general y entrar a las hojas de proceso, novedades y calendario asociados.
+                </p>
+            </div>
+
+            
+
+
+        <div class="card">       
+
+            <!-- NUEVO: Accesos directos a áreas -->
+            <h2>Áreas de Producción y Soporte</h2>
+            <p class="page-subtitle">
+                Accesos directos a las áreas con sus procesos, documentos y herramientas específicas.
+            </p>
+
+        <div class="areas-carousel">
+
+            <!-- Flecha izquierda -->
+            <button class="areas-arrow left" id="areas-left">‹</button>
+
+            <div class="areas-scroll-container">
+                <div class="areas-scroll">
+                    <a href="Horizontales.html" class="area-card">
+                        <h3>Línea Horizontales</h3>
+                        <p>Armado, Equipado, Control y Embalaje de horizontales.</p>
+                    </a>
+
+                    <a href="Verticales.html" class="area-card">
+                        <h3>Línea Verticales</h3>
+                        <p>Producción de exhibidoras y heladeras de 1f y 2f.</p>
+                    </a>
+
+                    <a href="ref" class="area-card">
+                        <h3>Plástico</h3>
+                        <p>Extrusión, Termoformado, Corte  y Abastecimiento de piezas plásticas.</p>
+                    </a>
+
+                    <a href="ref" class="area-card">
+                        <h3>Chapería</h3>
+                        <p>Corte, Punzonado y Plegado de piezas metálicas y Sector de Capilares.</p>
+                    </a>
+
+                    <a href="ref" class="area-card">
+                        <h3>Subensamble</h3>
+                        <p>Armado de UC, Forzadores, Evaporadores y Conjuntos Eléctricos.</p>
+                    </a>
+
+                    <a href="ref" class="area-card">
+                        <h3>Puertas</h3>
+                        <p>Armado y Espumado de puertas para Heladeras y Freezers.</p>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Flecha derecha -->
+            <button class="areas-arrow right" id="areas-right">›</button>
+
+        </div>
+        </div> 
+
+        <div class="card">
+            <h2>Layout de Planta 2025</h2>
+
+            <a href="Plano.pdf" target="_blank" class="plano-link">
+                <img src="Plano.png" alt="Plano general de planta" class="plano-img">
+            </a>
+
+            <p class="plano-hint">
+                Hacer click sobre el plano para abrirlo en grande y usar zoom / desplazamiento.
+            </p>
+        </div>
+
+
+
+ 
+
+         <div class="card">
+            <div class="seguridad">
+                <img src="Elementos de seguridad2.jpg" alt="Elementos_de_Seguridad">
+            </div>
+        </div>
+
+
+
+            <!-- DIAGRAMA DE PROCESOS 
+            <div class="card">
+                <h2>Diagrama de Flujo de Procesos</h2>
+                <div class="diagram">
+                    <img src="" alt="Diagrama de Procesos">
+                </div>
+            </div> -->
+
+            
+
+
+        </div> <!-- cierre container -->
+        </div> <!-- cierre main-content -->
+
+        <!-- 🟦 COLUMNA LATERAL DE INFO -->
+        <aside class="info-sidebar">
+            
+        <div class="info-sidebar-header">
+            <!-- <span class="info-sidebar-tag">Guía rápida</span>-->
+            <h2>Mejora continua</h2>
+            <p>La mejora continua es un proceso continuo 
+                que implica analizar el rendimiento, 
+                identificar oportunidades y realizar cambios graduales en los procesos, 
+                los productos y el personal. Al analizar y ajustar los procesos, 
+                la empresa puede ahorrar tiempo y ofrecer un producto mejor.</p>
+        </div>
+
+        <div class="info-sidebar-header">
+            <h2>¿Qué es Lean?</h2>
+            <p>Filosofía orientada a eliminar desperdicios y maximizar valor.</p>
+            <ul>
+                <li>Definir qué es valioso para el cliente</li>
+                <li>Mapear todos los pasos y eliminar los que no aportan</li>
+                <li>Asegurar un flujo continuo, sin interrupciones</li>
+                <li>Producir solo lo que necesario</li>
+                <li>Buscar la mejora continua</li>
+            </ul>
+        </div>
+
+        <div class="info-sidebar-header">
+            <h2>Desperdicios</h2>
+            <p>No solo materiales físicos, sino 
+            actividades que consumen recursos sin 
+            añadir valor, como:</p>
+            <ol>
+                <li>Sobreproducción</li>
+                <li>Tiempos de espera</li>
+                <li>Transporte innecesario</li>
+                <li>Inventario excesivo</li>
+                <li>Defectos y Retrabajos</li>
+                <li>Movimientos ineficiente de personal</li>
+                <li>Procesos que no agregan valor</li>
+            </ol>
+        </div>
+
+
+        <div class="info-sidebar-header">
+            <!-- <h3>Mapa / Referencia</h3> -->
+            <!-- <p>Click para ver en grande.</p> -->
+
+            <button class="sidebar-image-btn" id="sidebar-image-btn" type="button" aria-label="Abrir imagen en grande">
+                <img src="reglas-de-oro.jpg" alt="Imagen de referencia" class="sidebar-image">
+            </button>
+        </div>
+
+
+        <!-- Reglas de oro en listado
+        <div class="info-sidebar-header">
+            <h2>Reglas de planta</h2>
+            <ul>
+                <li>Uso obligatorio de EPP.</li>
+                <li>Respetar pasillos señalizados.</li>
+                <li>Orden y limpieza al final del turno.</li>
+                <li>Reportar desvíos de seguridad.</li>
+            </ul>
+        </div> -->
+
+        <div class="info-sidebar-header">
+            <h3>Links útiles</h3>
+            <ul class="links-list">
+                <li><a href="#" target="_blank">Panel de procesos (Notion)</a></li>
+                <li><a href="#" target="_blank">Procedimientos ISO</a></li>
+                <li><a href="#" target="_blank">Calendario de planta</a></li>
+            </ul>
+        </div>
+    </aside>
+
+
+    </div> <!-- cierre page-layout -->
+
+</main>
+
+
+    
+
+    <!-- JS externo -->
+    <script src="Procesos.js"></script>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2025 Briket S.A. – Ingeniería de Procesos</p>
+            <p class="footer-small">Sistema interno de gestión de Procesos · Versión 1.0</p>
+        </div>
+    </footer>
+
+    <!-- Foto de las reglas de oro-->
+    <div class="img-modal" id="img-modal" aria-hidden="true">
+    <div class="img-modal-backdrop" id="img-modal-backdrop"></div>
+    <div class="img-modal-content" role="dialog" aria-modal="true">
+        <button class="img-modal-close" id="img-modal-close" type="button" aria-label="Cerrar">✕</button>
+        <img src="reglas-de-oro.jpg" alt="Imagen ampliada" class="img-modal-image" id="img-modal-image">
+    </div>
+    </div>
+
+
+
+</body>
+</html>

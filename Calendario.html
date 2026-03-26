@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario de Procesos - Briket S.A.</title>
+
+    <link rel="stylesheet" href="Comun.css">
+    <link rel="stylesheet" href="Calendario.css">
+    
+</head>
+
+<body>
+
+<header>
+    <div class="header-left">
+        <img src="logo_briket.png" alt="Briket S.A.">
+        <h1>Ingeniería de Procesos</h1>
+    </div>
+
+    <button class="menu-toggle" id="menu-toggle">
+    <span></span>
+    </button>
+
+    <nav>
+        <ul>
+                <li><a href="Procesos.html">Inicio</a></li>
+                <li><a href="Horizontales.html">Línea Horizontales</a></li>
+                <li><a href="ref">Línea Verticales</a></li>
+                <li><a href="ref">Plástico</a></li>
+                <li><a href="ref">Chapería</a></li>
+                <li><a href="Novedades.html">Novedades / Solicitudes</a></li>
+                <li><a href="Calendario.html">Calendario</a></li>
+            <!-- <li><a href="ProduccionHoraHora.html">Producción Hora a Hora</a></li> -->
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <div class="container">
+
+        <div class="card">
+            <h2 class="page-title">Calendario de Procesos</h2>
+            <p class="page-subtitle">
+                Visualizá por mes las reuniones, cambios, desvíos y otros eventos planificados
+                relacionados con el área de Procesos.
+            </p>
+
+           
+
+        </div>
+
+        <!-- CALENDARIO -->
+        <div class="card">
+            <div class="calendar-header">
+                <button id="prev-month" class="calendar-nav">&lt;</button>
+                <h3 id="calendar-title"></h3>
+                <button id="next-month" class="calendar-nav">&gt;</button>
+            </div>
+
+            <div class="calendar-grid" id="calendar-grid">
+                <!-- Se completa con JS -->
+            </div>
+        </div>
+
+        <!-- LISTADO DE EVENTOS DEL DÍA SELECCIONADO -->
+        <div class="card">
+            <h2>Eventos del día seleccionado</h2>
+            <div id="event-list" class="event-list">
+                <p style="font-size:14px;color:#555;">Seleccioná un día con eventos en el calendario.</p>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="footer-content">
+        <p>© 2025 Briket S.A. – Ingeniería de Procesos</p>
+        <p class="footer-small">Calendario interno de Procesos · Versión 1.0</p>
+    </div>
+</footer>
+
+<!-- IMPORTANTE: el JS va al final -->
+<script src="Calendario.js"></script>
+</body>
+</html>

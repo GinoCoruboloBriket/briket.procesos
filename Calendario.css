@@ -1,0 +1,150 @@
+/* Card títulos (heredados de common.css) */
+/* .card, .page-title, etc. ya vienen de common.css */
+
+/* Calendario */
+.calendar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+#calendar-title {
+    margin: 0;
+    font-size: 18px;
+}
+
+.calendar-nav {
+    border: none;
+    background: #e5e5e5;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.calendar-nav:hover {
+    background: #d4d4d4;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+    font-size: 13px;
+}
+
+/* Nombres de día */
+.calendar-day-name {
+    font-weight: bold;
+    text-align: center;
+    padding: 6px 0;
+}
+
+/* Cuadrados de días */
+.calendar-day {
+    min-height: 70px;
+    background: #f9fafb;
+    border-radius: 6px;
+    padding: 4px;
+    box-sizing: border-box;
+    position: relative;
+    cursor: default;
+}
+
+.calendar-day-number {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.calendar-day.has-event {
+    border: 1px solid #2563eb;
+    cursor: pointer;
+}
+
+.calendar-day.has-event:hover {
+    background: #eff6ff;
+}
+
+/* Indicador de evento */
+.event-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #2563eb;
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+}
+
+/* Lista de eventos */
+.event-list-item {
+    border-bottom: 2px solid #eee;
+    padding: 6px 0;
+}
+
+.event-list-item:last-child {
+    border-bottom: none;
+}
+
+.event-title {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.event-meta {
+    font-size: 12px;
+    padding-top: 2px;
+    color: #555;
+}
+
+/* Preview de evento dentro del cuadrito del calendario */
+.calendar-event-preview {
+    margin-top: 4px;
+    font-size: 11px;
+    color: #4b5563;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/* Prueba boton programa diario
+
+.programa-btn {
+    background-color: #2563eb;
+    color: #fff;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.programa-btn:hover {
+    background-color: #1e40af;
+}
+
+*/
+
+
+.programa-dia-btn {
+    margin-top: 6px;
+    width: 100%;
+    padding: 4px 6px;
+    font-size: 11px;
+    border-radius: 4px;
+    border: 1px solid #ececec;
+    background-color: #dfe0e2;
+    cursor: pointer;
+    text-align: center;
+    
+}
+
+.programa-dia-btn:hover {
+    background-color: #e5e5e5;
+}
+

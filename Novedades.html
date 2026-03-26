@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novedades de Procesos - Briket S.A.</title>
+
+    <!-- CSS externo -->
+    <link rel="stylesheet" href="Comun.css">
+    <link rel="stylesheet" href="Novedades.css">
+    
+</head>
+
+<body>
+
+    
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="header-left">
+            <img src="logo_briket.png" alt="Briket S.A.">
+            <h1>Ingeniería de Procesos</h1>
+        </div>
+
+        <button class="menu-toggle" id="menu-toggle">
+        <span></span>
+        </button>
+
+        <nav>
+            <ul>
+                <li><a href="Procesos.html">Inicio</a></li>
+                <li><a href="Horizontales.html">Línea Horizontales</a></li>
+                <li><a href="ref">Línea Verticales</a></li>
+                <li><a href="ref">Plástico</a></li>
+                <li><a href="ref">Chapería</a></li>
+                <li><a href="Novedades.html">Novedades / Solicitudes</a></li>
+                <li><a href="Calendario.html">Calendario</a></li>
+                <!-- <li><a href="ProduccionHoraHora.html">Producción Hora a Hora</a></li> -->
+            </ul>
+        </nav>
+    </header>
+<main>
+
+    <!-- CONTENIDO -->
+
+    <div class="container">
+
+        <div class="card">
+        <h2 class="page-title">Novedades de Procesos</h2>
+        <p class="page-subtitle">
+            Cambios, mejoras y avisos importantes relacionados con los procesos productivos.
+        </p>
+
+        </div>
+
+
+    <!-- BLOQUE PRINCIPAL -->
+    <div class="card-duo">
+
+    <!-- REGISTRO DE NOVEDADES -->
+        <div class="card half-card">
+            <h2>Registro de las novedades</h2>
+            <p style="font-size:14px; color:#555;">
+                A continuación se muestran todas las novedades. Se detalla el área, fotos, documentos, links y justificaciones.
+            </p>
+
+            <a href="https://peppermint-boater-a42.notion.site/2baed757359b8040a5d4dfcdf73841a9?v=2baed757359b801a9d80000c7720c4bf&source=copy_link"
+            target="_blank"
+            class="notion-btn">
+                🔗 Novedades
+            </a>
+        </div>
+
+        
+
+
+        <!-- SOLICITUDES DE PROCESOS -->
+        <div class="card half-card">
+            <h2>Solicitudes de Procesos</h2>
+            <p style="font-size:14px; color:#555;">
+                Si necesitás solicitar una mejora, corrección o acción al área de Procesos, podés cargar tu pedido en el siguiente formulario.
+            </p>
+
+            <a href="https://www.notion.so/2b9ed757359b80d6ad48ce41a4ffcb18?v=2b9ed757359b80128318000ccdfa5106&source=copy_link"
+            target="_blank"
+            class="notion-btn">
+                ➕ Crear solicitud / tarea
+            </a>
+        </div>
+
+    </div>
+
+        
+        <div class="card modificaciones-card">
+            <h2>Modificaciones recientes</h2>
+
+            <div class="news-grid" id="news-grid-dinamicas">
+                <!-- Acá el JS inserta las novedades dinámicas -->
+            </div>
+        
+        </div>
+
+
+
+        
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox">
+        <img id="lightbox-img" src="" alt="Imagen ampliada">
+    </div>
+
+    <!-- JS externo -->
+    <script src="Novedades.js"></script>
+
+</main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2025 Briket S.A. – Ingeniería de Procesos</p>
+            <p class="footer-small">Sistema interno de gestión de Procesos · Versión 1.0</p>
+        </div>
+    </footer>
+
+    
+</body>
+</html>

@@ -1,0 +1,457 @@
+/* === CARDS DE ÁREAS EN INICIO (vista tipo grilla si alguna vez la usás) === */
+
+.areas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 12px;
+}
+
+/* Tarjetas de áreas (se usan tanto en grilla como en carrusel) */
+.area-card {
+    display: block;
+    background: #fafafa;
+    border-radius: 10px;
+    border: 1px solid #222e4b;
+    padding: 14px;
+    text-decoration: none;
+    color: #111827;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+    flex: 0 0 260px;          /* ancho fijo en carrusel */
+    scroll-snap-align: start; /* anclaje en scroll horizontal */
+}
+
+.area-card h3 {
+    margin: 0 0 6px 0;
+    font-size: 16px;
+}
+
+.area-card p {
+    margin: 0;
+    font-size: 13px;
+    color: #4b5563;
+    line-height: 1.3;
+}
+
+/* Hover muy suave (sin rebote ni sombra fuerte) */
+.area-card:hover {
+    transform: none;
+    box-shadow: none;
+    background-color: #f3f4f6;
+}
+
+/* === DIAGRAMA DE PROCESOS === */
+
+.diagram {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.diagram img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+
+/* === Elementos de seguridad div === */
+
+.seguridad {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.seguridad img {
+    max-width: 80%;
+    border-radius: 10px;
+}
+
+
+
+
+/* === ACCORDION DE PROCESOS === */
+
+.accordion {
+    background-color: #eee;
+    color: #000;
+    cursor: pointer;
+    padding: 15px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    transition: 0.3s;
+    position: relative;
+    padding-right: 30px;
+}
+
+.accordion::after {
+    content: "▸";
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    transition: transform 0.2s;
+}
+
+.accordion.active::after {
+    transform: translateY(-50%) rotate(90deg);
+}
+
+.accordion:hover {
+    background-color: #ddd;
+}
+
+.panel {
+    padding: 0 15px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+    border-left: 3px solid #000;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.panel a {
+    display: block;
+    padding: 8px 0;
+    text-decoration: none;
+    color: #000;
+}
+
+.panel a:hover {
+    text-decoration: underline;
+}
+
+/* === CARRUSEL DE ÁREAS CON FLECHAS === */
+
+.areas-carousel {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+/* Flechas laterales */
+.areas-arrow {
+    flex: 0 0 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    border: 1px solid #d1d5db;
+    background: #fff;
+    color: #000;
+
+    font-size: 16px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: background 0.2s, border-color 0.2s, transform 0.15s;
+}
+
+.areas-arrow:hover {
+    background: #f3f4f6;
+    border-color: #9ca3af;
+    transform: scale(1.05);
+}
+
+.areas-arrow.disabled {
+    opacity: 0.25;
+    pointer-events: none;
+}
+
+/* Carril central con scroll horizontal controlado por las flechas */
+.areas-scroll-container {
+    flex: 1 1 auto;
+    overflow: hidden;
+    padding-bottom: 5px;
+    margin-top: 12px;
+}
+
+.areas-scroll {
+    display: flex;
+    gap: 14px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 8px 0;
+}
+
+/* Scrollbar opcional (si en algún momento se usa overflow-x:auto) */
+.areas-scroll-container::-webkit-scrollbar {
+    height: 6px;
+}
+
+.areas-scroll-container::-webkit-scrollbar-thumb {
+    background: #b5b5b5;
+    border-radius: 10px;
+}
+
+/* Responsive: en pantallas chicas ajustamos un poco las tarjetas */
+@media (max-width: 600px) {
+    .areas-arrow {
+        flex: 0 0 28px;
+        font-size: 18px;
+    }
+
+    .area-card {
+        flex: 0 0 230px;
+    }
+}
+
+/* === PLANO DE PLANTA === */
+
+.plano-img {
+    width: 100%;
+    max-height: 600px;
+    object-fit: contain;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    cursor: zoom-in;
+    background-color: #fff;
+}
+
+.plano-link {
+    display: block;
+    text-align: center;
+}
+
+.plano-hint {
+    margin-top: 8px;
+    font-size: 13px;
+    text-align: center;
+    color: #6b7280;
+}
+
+/* ===== LAYOUT 2 COLUMNAS (CONTENIDO + COLUMNA DERECHA) ===== */
+
+.page-layout {
+    max-width: 1550px;
+    margin: 20px auto;
+    padding: 0 16px;
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+}
+
+/* quitamos el padding del .container dentro del layout para evitar doble margen */
+.page-layout .container {
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+}
+
+.main-content {
+    flex: 1;
+    min-width: 0;
+}
+
+/* nos aseguramos que la primera card no tenga margen extra arriba */
+.main-content > .container:first-child .card:first-child {
+    margin-top: 0;
+}
+
+/* COLUMNA DERECHA (info / lean / reglas) */
+
+.info-sidebar {
+    width: 300px;
+    flex-shrink: 0;
+    font-size: 14px;
+    margin-top: 0;
+}
+
+/* Encabezado de la barra lateral */
+.info-sidebar-header {
+    background: #0e1525;
+    color: #f9fafb;
+    border-radius: 14px;
+    padding: 14px 16px;
+    margin-bottom: 19.5px;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.25);
+}
+
+.info-sidebar-header h2 {
+    margin: 4px 0 6px 0;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.info-sidebar-header p {
+    margin: 0;
+    font-size: 13px;
+    color: #f9fafb;
+}
+
+.info-sidebar-tag {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 999px;
+    background: rgba(148, 163, 184, 0.25);
+    color: #e5e7eb;
+}
+
+/* Tarjetas dentro del sidebar */
+
+.info-card {
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    padding: 12px 14px;
+    margin-bottom: 12px;
+    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.06);
+}
+
+.info-card h3 {
+    margin: 0 0 6px 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: #111827;
+}
+
+.info-card p {
+    margin: 0 0 6px 0;
+    font-size: 13px;
+    color: #4b5563;
+    line-height: 1.4;
+}
+
+.info-card ul,
+.info-card ol {
+    margin: 0 0 4px 16px;
+    padding: 0;
+    font-size: 13px;
+    color: #4b5563;
+}
+
+.info-card li {
+    margin-bottom: 2px;
+}
+
+/* Links dentro del bloque de links útiles */
+
+.links-list {
+    list-style: none;
+    padding: 0;
+    margin: 2px 0 0 0;
+}
+
+.links-list li {
+    margin-bottom: 4px;
+}
+
+.links-list a {
+    text-decoration: none;
+    color: #2563eb;
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.links-list a:hover {
+    text-decoration: underline;
+}
+
+/* RESPONSIVE: en pantallas chicas el sidebar baja abajo del contenido */
+
+@media (max-width: 1050px) {
+    .page-layout {
+        flex-direction: column;
+        padding: 0 16px;
+    }
+
+    .info-sidebar {
+        width: 100%;
+        margin-top: 8px;
+    }
+
+    .info-sidebar-header {
+        border-radius: 12px;
+    }
+}
+
+
+
+
+
+/* ===== Imagen (reglas 9 d oro) dentro del sidebar ===== */
+.sidebar-image-btn{
+  padding: 0;
+  border: 0;
+  background: transparent;
+  width: 100%;
+  cursor: zoom-in;
+}
+
+.sidebar-image{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  object-fit: cover;
+}
+
+/* ===== Modal para agrandar imagen ===== */
+.img-modal{
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 20000;
+}
+
+.img-modal.open{
+  display: block;
+}
+
+.img-modal-backdrop{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+}
+
+.img-modal-content{
+  position: relative;
+  z-index: 1;
+  width: min(1100px, calc(100vw - 32px));
+  height: min(80vh, 780px);
+  margin: 60px auto;
+  background: #111;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 18px 60px rgba(0,0,0,0.45);
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-modal-image{
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+  background: #0b0b0b;
+}
+
+.img-modal-close{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+

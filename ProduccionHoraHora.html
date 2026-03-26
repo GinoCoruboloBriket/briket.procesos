@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Producción Hora a Hora - Briket S.A.</title>
+
+    <link rel="stylesheet" href="Comun.css">
+    <link rel="stylesheet" href="ProduccionHoraHora.css">
+</head>
+<body>
+
+<header>
+    <div class="header-left">
+        <img src="logo_briket.png" alt="Briket S.A.">
+        <h1>Ingeniería de Procesos</h1>
+    </div>
+
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+
+    <nav>
+        <ul>
+            <li><a href="Procesos.html">Inicio</a></li>
+            <li><a href="Novedades.html">Novedades / Solicitudes</a></li>
+            <li><a href="Calendario.html">Calendario</a></li>
+            <li><a href="ProduccionHoraHora.html">Producción Hora a Hora</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <div class="container">
+
+        <!-- Intro -->
+        <div class="card">
+            <h2 class="page-title">Producción hora a hora</h2>
+            <p class="page-subtitle">
+                Registro horario de producción para comparar contra el programa:
+                Hora, Meta, Producido, Merma y Motivo de Merma.
+            </p>
+        </div>
+
+        <!-- Filtros / info del día -->
+        <div class="card">
+            <h2>Configuración del día</h2>
+            <div class="config-grid">
+                <div class="config-item">
+                    <label for="fecha-dia">Fecha</label>
+                    <input type="date" id="fecha-dia">
+                </div>
+
+                <div class="config-item">
+                    <label for="linea">Línea / Sector</label>
+                    <input type="text" id="linea" placeholder="Ej: Línea Horizontales 1">
+                </div>
+
+                <div class="config-item">
+                    <label for="turno">Turno</label>
+                    <input type="text" id="turno" placeholder="Ej: Único turno">
+                </div>
+            </div>
+        </div>
+
+        <!-- Resumen -->
+        <div class="card">
+            <h2>Resumen del día</h2>
+            <div class="resumen-grid">
+                <div class="resumen-box">
+                    <span class="resumen-label">Meta total</span>
+                    <span class="resumen-value" id="meta-total">0</span>
+                </div>
+                <div class="resumen-box">
+                    <span class="resumen-label">Producido total</span>
+                    <span class="resumen-value" id="producido-total">0</span>
+                </div>
+                <div class="resumen-box">
+                    <span class="resumen-label">Merma total</span>
+                    <span class="resumen-value" id="merma-total">0</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tabla hora a hora -->
+        <div class="card">
+            <h2>Registro hora a hora</h2>
+            <p style="font-size:13px;color:#555;margin-bottom:8px;">
+                Completá cada hora la meta, lo producido y el motivo si hay merma.
+            </p>
+
+            <div class="tabla-wrapper">
+                <table class="tabla-horaria">
+                    <thead>
+                        <tr>
+                            <th>Hora</th>
+                            <th>Meta</th>
+                            <th>Producido</th>
+                            <th>Merma</th>
+                            <th>Motivo de Merma</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-horas">
+                        <!-- Filas generadas por JS -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="acciones-tabla">
+                <button id="btn-agregar-fila">➕ Agregar hora</button>
+                <button id="btn-guardar-dia" class="btn-primario">💾 Guardar día</button>
+            </div>
+
+            <p id="estado-guardado" class="estado-guardado"></p>
+        </div>
+
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="footer-content">
+        <p>© 2025 Briket S.A. – Ingeniería de Procesos</p>
+        <p class="footer-small">Registro interno de producción · Versión 1.0</p>
+    </div>
+</footer>
+
+<script src="ProduccionHoraHora.js"></script>
+</body>
+</html>

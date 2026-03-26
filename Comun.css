@@ -1,0 +1,401 @@
+/* === LAYOUT BASE === */
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #f2f2f2;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+}
+
+main {
+    flex: 1 0 auto; /* empuja el footer al final */
+}
+
+/* === HEADER + NAVBAR === */
+header {
+    background-color: #0e1525;
+    color: white;
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+header img {
+    height: 45px;
+    filter: brightness(0) invert(1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+
+/* -------- MENÚ HAMBURGUESA + PANEL LATERAL Vers 4 -------- */
+
+/* Botón hamburguesa: SIEMPRE visible (desktop y mobile) */
+/* .menu-toggle {
+    display: block;
+    font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    margin-left: auto;
+    z-index: 10001; /* por encima del panel 
+} */
+
+/* Contenedor del menú (panel lateral derecho) */
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 60px 0px;
+    position: fixed;
+    top: 0;
+    right: -300px;           /* escondido por defecto */
+    width: 300px;            /* ancho del panel */
+    height: 100vh;           /* ocupa la altura completa */
+    background-color: #000;  /* mismo negro del header */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: -4px 0 12px rgba(0,0,0,0.4);
+    /* transform: translateX(100%); */  /* 100% hacia afuera = totalmente oculto */
+    transition: right 0.25s ease;
+    z-index: 10000;
+}
+
+/* Cuando se abre el panel, entra a la vista */
+header nav ul.show {
+    transform: translateX(0);
+}
+
+/* Cuando se abre el menú */
+header nav ul.show {
+    right: 0;                /* se desliza hacia adentro */
+}
+
+header nav li {
+    list-style: none;
+    padding-top: 10px;
+}
+
+/* Links dentro del panel*/
+
+/* ===== BOTÓN HAMBURGUESA ANIMADO (con transición a X) ===== */
+
+.menu-toggle {
+    width: 30px;
+    height: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 10001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+}
+
+.menu-toggle span,
+.menu-toggle span::before,
+.menu-toggle span::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 22px;
+    height: 3px;
+    background-color: white;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.menu-toggle span::before {
+    transform: translateY(-7px);
+}
+
+.menu-toggle span::after {
+    transform: translateY(7px);
+}
+
+/* ESTADO ABIERTO → CRUZ */
+.menu-toggle.open span {
+    background-color: transparent;
+}
+
+.menu-toggle.open span::before {
+    transform: rotate(45deg);
+}
+
+.menu-toggle.open span::after {
+    transform: rotate(-45deg);
+}
+
+
+
+
+
+/* -------- MENÚ HAMBURGUESA Vers 3 -------- 
+
+.menu-toggle {
+    display: none;              /* Oculto en escritorio 
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    margin-left: auto;
+}
+
+/* Menú en escritorio 
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+nav li {
+    list-style: none;
+}
+*/ 
+
+/* Ocultar menú en pantallas chicas y mostrar botón 
+@media (max-width: 850px) {
+    header {
+        position: relative;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #000;
+        width: 100%;
+        padding: 10px 0;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        text-align: center;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+*/
+
+
+
+/* -------- MENÚ HAMBURGUESA Vers 2 -------- 
+
+.menu-toggle {
+    display: none;              /* Oculto en escritorio 
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    margin-left: auto;
+}*/
+
+/* Lista del menú en vista escritorio 
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+nav li {
+    list-style: none;
+} */
+
+/* Vista mobile: oculto el menú y muestro el botón 
+@media (max-width: 850px) {
+    header {
+        position: relative;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #000;
+        width: 100%;
+        padding: 10px 0;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        text-align: center;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}*/
+
+
+
+/* -------- HAMBURGER MENU PRUEBA Vers 1 --------  
+.menu-toggle {
+    display: none;
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    margin-left: auto;
+}*/ 
+
+/* Ocultar menú en pantallas chicas 
+@media (max-width: 850px) {
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #000;
+        width: 100%;
+        padding: 10px 0;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        text-align: center;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    header {
+        position: relative;
+    }
+} */
+
+
+/* nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+} */
+
+nav a {
+    color: #f9fafb;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+nav a:hover {
+    background-color: #f9fafb;
+    color: #000;
+}
+
+/* === CONTENEDOR Y CARDS === */
+.container {
+    padding: 25px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+    border: 1px solid #e5e7eb;
+}
+
+.card h2 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: #000;
+}
+
+/* Títulos y subtítulos de página */
+.page-title {
+    margin: 0 0 10px 0;
+    font-size: 26px;
+    font-weight: 700;
+    color: #000;
+}
+
+.page-subtitle {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+}
+
+/* === BOTONES PRINCIPALES (Notion / Procesos) === */
+.notion-btn,
+.procesos-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.notion-btn:hover,
+.procesos-btn:hover {
+    background-color: #333;
+}
+
+/* === FOOTER === */
+.footer {
+    flex-shrink: 0;
+    background-color: #0e1525;
+    color: #f9f9f9;
+    padding: 25px 0;
+    margin-top: 20px;
+}
+
+.footer-content {
+    max-width: 1100px;
+    margin: auto;
+    text-align: center;
+}
+
+.footer p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.footer-small {
+    color: #e2dddd;
+    font-size: 12px;
+}

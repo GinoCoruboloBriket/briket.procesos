@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novedades de Procesos - Briket S.A.</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        /* Header + NAVBAR (igual que en index) */
+        header {
+            background-color: #000;
+            color: white;
+            padding: 16px 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        header img {
+            height: 45px;
+            filter: brightness(0) invert(1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 22px;
+            font-weight: 400;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav a {
+            color: #f9fafb;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 6px 10px;
+            border-radius: 4px;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        nav a:hover {
+            background-color: #f9fafb;
+            color: #000;
+        }
+
+        /* Contenedor */
+        .container {
+            padding: 25px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .page-title {
+            margin: 0 0 5px 0;
+            font-size: 26px;
+            color: #000;
+        }
+
+        .page-subtitle {
+            margin: 0 0 20px 0;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+        }
+
+        /* Botón */
+        .notion-btn {
+            display: inline-block;
+            padding: 12px 20px;
+            background-color: #000;
+            color: #fff;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .notion-btn:hover {
+            background-color: #333;
+        }
+
+        /* Tarjetas */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 360px));
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .news-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 15px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .news-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 6px;
+        }
+
+        .news-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .news-date {
+            font-size: 12px;
+            color: #777;
+        }
+
+        .news-area {
+            font-size: 12px;
+            color: #555;
+            margin-bottom: 6px;
+        }
+
+        .news-body {
+            font-size: 14px;
+            color: #333;
+        }
+
+        .news-tag {
+            display: inline-block;
+            font-size: 11px;
+            margin-top: 8px;
+            padding: 2px 8px;
+            border-radius: 999px;
+            background-color: #ecfdf3;
+            color: #166534;
+        }
+        
+        .news-image {
+            width: 100%;
+            height: 220px;
+            background: #f4f4f4;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .news-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            cursor: zoom-in;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.85);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+
+        .lightbox.active {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(255,255,255,0.3);
+            object-fit: contain;
+            cursor: zoom-out;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="header-left">
+            <img src="logo_briket.png" alt="Briket S.A.">
+            <h1>Ingeniería de Procesos</h1>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="Procesos.html">Procesos</a></li>
+                <li><a href="Novedades.html">Novedades / Noticias</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO -->
+    <div class="container">
+
+        <h2 class="page-title">Novedades de Procesos</h2>
+        <p class="page-subtitle">
+            Cambios, mejoras y avisos importantes relacionados con los procesos productivos.
+        </p>
+
+        <!-- BLOQUE PRINCIPAL -->
+        <div class="card">
+            <h2>Registro vivo en Notion</h2>
+            <p style="font-size:14px; color:#555;">
+                Todas las novedades se gestionan desde la base de datos en Notion.
+                Ahí podés cargar textos, fotos, documentos y links.  
+                Cualquier cambio se muestra automáticamente al abrir el enlace.
+            </p>
+
+            <!-- BOTÓN A NOTION -->
+            <a href="https://peppermint-boater-a42.notion.site/2baed757359b8040a5d4dfcdf73841a9?v=2baed757359b801a9d80000c7720c4bf&source=copy_link"
+               target="_blank"
+               class="notion-btn">
+                🔗 Abrir novedades en Notion
+            </a>
+
+            <p style="font-size:12px; color:#777; margin-top:10px;">
+                Se abrirá en una nueva pestaña. Notion no permite mostrarse adentro de la web.
+            </p>
+        </div>
+        
+        <div class="card">
+            <h2>Novedades recientes</h2>
+            <div class="news-grid" id="news-grid-dinamicas">
+                <!-- Acá se insertan las novedades con JS -->
+            </div>
+            <p style="font-size:12px; color:#999; margin-top:15px;">
+                Las novedades se cargan automáticamente desde Notion.
+            </p>
+        </div>
+
+        <!-- OPCIONAL: NOVEDADES PUBLICADAS EN LA WEB -->
+        <div class="card">
+            <h2>Novedades destacadas</h2>
+
+            <div class="news-grid">
+                <!-- EJEMPLO LOCAL -->
+                <div class="news-card">
+                    <div class="news-header">
+                        <div class="news-title">Actualización en ARH → ESPH</div>
+                        <div class="news-date">27/11/2025</div>
+                    </div>
+
+                    <div class="news-area">Área: ARH – Armado Horizontales</div>
+
+                    <div class="news-body">
+                        Se incorpora SUBH y EMBH como etapas explícitas en el diagrama general.
+                        Nuevo documento de proceso disponible en la sección principal.
+                    </div>
+
+                    <span class="news-tag">Mejora de proceso</span>
+                </div>
+            </div>
+
+            <p style="font-size:12px; color:#999; margin-top:15px;">
+                Para agregar una novedad manual en esta página, duplicá cualquier 
+                <code>&lt;div class="news-card"&gt;...&lt;/div&gt;</code>.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox">
+        <img id="lightbox-img" src="" alt="Imagen ampliada">
+    </div>
+
+    <script>
+      async function cargarNovedades() {
+        const contenedor = document.getElementById('news-grid-dinamicas');
+        if (!contenedor) return;
+
+        // URL del Web App de Google Apps Script
+        const url = 'https://script.google.com/macros/s/AKfycbyvaf6-MNFYbIgKag2rCSHuPKakq5QOegHFogWXxE-bpV1qR1s8S3KUD-iVmROL66oT/exec';
+
+        contenedor.innerHTML = '<p style="font-size:13px;color:#777;">Cargando novedades...</p>';
+
+        try {
+          const resp = await fetch(url);
+          if (!resp.ok) throw new Error('Error en la respuesta');
+
+          const data = await resp.json();
+          const novedades = data.novedades || [];
+
+          if (novedades.length === 0) {
+            contenedor.innerHTML = '<p style="font-size:13px;color:#777;">No hay novedades cargadas.</p>';
+            return;
+          }
+
+          contenedor.innerHTML = '';
+
+          novedades.forEach(n => {
+            const card = document.createElement('div');
+            card.className = 'news-card';
+            card.innerHTML = `
+              ${n.imagen ? `
+                  <div class="news-image">
+                      <img class="clickable-image" src="${n.imagen}" alt="${n.titulo || 'Imagen de la novedad'}">
+                  </div>
+              ` : ''}
+
+              <div class="news-header">
+                  <div class="news-title">${n.titulo || 'Sin título'}</div>
+                  <div class="news-date">${n.fecha || ''}</div>
+              </div>
+
+              <div class="news-area">Área: ${n.area || 'General'}</div>
+
+              <div class="news-body">
+                  ${n.descripcion || ''}
+                  ${n.link ? `<br><br><a href="${n.link}" target="_blank" style="font-size:12px;">Ver detalle en Notion →</a>` : ''}
+              </div>
+
+              <span class="news-tag">${n.tipo || ''}</span>
+            `;
+            contenedor.appendChild(card);
+          });
+
+        } catch (err) {
+          console.error(err);
+          contenedor.innerHTML = '<p style="font-size:13px;color:red;">No se pudieron cargar las novedades.</p>';
+        }
+      }
+
+      cargarNovedades();
+
+      // Lightbox: abrir al hacer clic en una imagen
+      document.addEventListener("click", function(e){
+        if (e.target.classList.contains("clickable-image")) {
+            const lightbox = document.getElementById("lightbox");
+            const lightboxImg = document.getElementById("lightbox-img");
+
+            lightboxImg.src = e.target.src;
+            lightbox.classList.add("active");
+        }
+      });
+
+      // Cerrar lightbox al hacer clic en el fondo o en la imagen
+      document.getElementById("lightbox").addEventListener("click", function(){
+          this.classList.remove("active");
+      });
+    </script>
+
+</body>
+</html>
